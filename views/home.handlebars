@@ -1,0 +1,14 @@
+<h1>ToDo App</h1>
+<form action="/submit" method="POST" class="inputForm">
+    <input name="taskInput" placeholder="Enter todo" class="inputField"/>
+    <button type="submit">Submit</button> 
+</form>
+
+{{#each taskList}}
+    <div class="task">
+        <input type="checkbox" onchange="changeTaskStatus('{{this}}')"></input>
+        <span class="task">{{this}}</span>
+        <button onclick="deleteTask('{{this}}')" class="delete-btn">Delete</button>
+    </div>
+    <br/>
+{{/each}}
